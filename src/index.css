@@ -39,9 +39,18 @@ button {
   border: none;
   margin: 5px;
   border-radius: 10px;
+  text-decoration: none;
+}
+
+button a {
+  text-decoration: none;
 }
 
 button:hover {
   background-color: #f1356d;
+  color: white;
+}
+
+button:hover a{
   color: white;
 }

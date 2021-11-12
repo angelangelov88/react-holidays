@@ -1,4 +1,5 @@
 import logo from './logo.jpg'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -7,13 +8,15 @@ const Navbar = () => {
     <nav className="navbar">
       <img src={logo} alt="logo" />
       <div className="links">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/uk-holidays">UK Holidays</a>
-        <a href="/us-holidays">US Holidays</a>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/uk-holidays">UK holidays</Link>
+        <Link to="/us-holidays">US holidays</Link>
 
       </div>
     </nav>
+
+    
    );
 }
  

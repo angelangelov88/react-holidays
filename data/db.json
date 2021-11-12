@@ -1,0 +1,64 @@
+{
+  "code": "GB",
+  "name": "United Kingdom",
+  "codes": {
+      "alpha-2": "GB",
+      "alpha-3": "GBR",
+      "numeric": "826"
+  },
+  "languages": [
+      "en"
+  ],
+  "flag": "https:\/\/www.countryflags.io\/GB\/flat\/64.png",
+  "subdivisions": [
+      {
+          "code": "GB-EAW",
+          "name": "England and Wales",
+          "languages": [
+              "en"
+          ]
+      },
+      {
+          "code": "GB-ENG",
+          "name": "England",
+          "languages": [
+              "en"
+          ]
+      },
+      {
+          "code": "GB-GBN",
+          "name": "Great Britain",
+          "languages": [
+              "en"
+          ]
+      },
+      {
+          "code": "GB-NIR",
+          "name": "Northern Ireland",
+          "languages": [
+              "en"
+          ]
+      },
+      {
+          "code": "GB-SCT",
+          "name": "Scotland",
+          "languages": [
+              "en"
+          ]
+      },
+      {
+          "code": "GB-UKM",
+          "name": "United Kingdom",
+          "languages": [
+              "en"
+          ]
+      },
+      {
+          "code": "GB-WLS",
+          "name": "Wales",
+          "languages": [
+              "en"
+          ]
+      }
+  ]
+}
