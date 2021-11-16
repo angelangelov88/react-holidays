@@ -1,11 +1,14 @@
 import useFetch from "./useFetch";
+import env from "react-dotenv";
+
 
 const UkHolidays = () => {
 
+  let key = `${process.env.REACT_APP_API_KEY}`
 
-  const { data:uk, isPending, error } = useFetch('https://holidayapi.com/v1/holidays?pretty&country=GB&year=2020&key=6ed5a947-e77b-4b5f-8d89-f467c29db15a')
+  const { data:uk, isPending, error } = useFetch(`https://holidayapi.com/v1/holidays?pretty&country=GB&year=2020&key=${key}`)
 
-  
+  // console.log(process.env.REACT_APP_API_KEY)
   // console.log(uk)
 
  
