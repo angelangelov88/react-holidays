@@ -2,7 +2,9 @@ import useFetch from "./useFetch";
 
 const UsHolidays = () => {
 
-  const { data:us, isPending, error } = useFetch('https://holidayapi.com/v1/holidays?pretty&country=US&year=2020&key=6ed5a947-e77b-4b5f-8d89-f467c29db15a')
+  let key = `${process.env.REACT_APP_API_KEY}`
+
+  const { data:us, isPending, error } = useFetch(`https://holidayapi.com/v1/holidays?pretty&country=US&year=2020&key=${key}`)
 
   
   // console.log(us)
