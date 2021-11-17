@@ -1,6 +1,7 @@
 import useFetch from "./useFetch";
 import { useState } from "react";
 import axios from "axios";
+import { isCompositeComponent } from "react-dom/test-utils";
 
 const AllHolidays = () => {
   let key = `${process.env.REACT_APP_API_KEY}`
@@ -17,9 +18,15 @@ const AllHolidays = () => {
   // const [res] = useState()
 
   const [countryCode] = useState("vf")
-   console.log(countryCode)
+  console.log(countryCode)
+
+  const [name, setName] = useState("")
+  const [date, setDate] = useState("")
+
+  const [res, setRes] = useState("")
 
   const clickHandler = (countryCode) => {
+
 
     console.log("Item clicked with country code: ", countryCode)
 
@@ -27,16 +34,21 @@ const AllHolidays = () => {
 
     console.log("Item clicked with country code: ", countryCode)
 
-    axios.get(url)
-    .then(response => {
-      const res = response.data
-      console.log("response: ", res)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
 
+    axios.get(url)
+      .then(response => {
+        const res = response.data
+        console.log("response: ", res)
+        setRes(res.holidays)
+        console.log(res)
+        setName(res.holidays[8].name)
+        setDate(res.holidays[8].date)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+        
+    }
 
   return (  
 
@@ -58,15 +70,27 @@ const AllHolidays = () => {
             {/* <ToggleComponent /> */}
             <p></p>
             <button onClick={() => clickHandler(countries.code)}>Show Holidays for {countries.name}</button>
-
           </div>
         ))
         }
-        <div>
-          
-        </div>
+        <>
+          {console.log(res)}
+          {res &&
+            res.map((holiday) => (
+            <>
+            {holiday.name}
+            <br />
+            {holiday.date}
+            <br />
+            </>
+          ))}
+              
+
+          </>
         </div>
       ) }
+
+
 
     </div>
   );

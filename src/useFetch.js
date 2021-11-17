@@ -1,18 +1,5 @@
 import { useState, useEffect } from "react";
 
-const axios = (url) => {
-  axios.get(url)
-  .then(response => {
-    const res = response.data
-    console.log("response: ", res)
-  })
-  .catch((err) => {
-    console.log(err)
-  })
-  
-}
-
-
 
 const useFetch = (url) => {
 
