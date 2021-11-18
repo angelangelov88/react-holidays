@@ -1,7 +1,6 @@
 import useFetch from "./useFetch";
 import { useState } from "react";
 import axios from "axios";
-import { isCompositeComponent } from "react-dom/test-utils";
 
 const AllHolidays = () => {
   let key = `${process.env.REACT_APP_API_KEY}`
@@ -17,79 +16,69 @@ const AllHolidays = () => {
 
   // const [res] = useState()
 
-  const [countryCode] = useState("vf")
-  console.log(countryCode)
-
-  const [name, setName] = useState("")
-  const [date, setDate] = useState("")
+  // const [countryCode] = useState("vf")
+  // console.log(countryCode)
 
   const [res, setRes] = useState("")
+
 
   const clickHandler = (countryCode) => {
 
 
-    console.log("Item clicked with country code: ", countryCode)
+    // console.log("Item clicked with country code: ", countryCode)
 
     let url = `https://holidayapi.com/v1/holidays?pretty&country=${countryCode}&year=2020&key=${key}`
 
-    console.log("Item clicked with country code: ", countryCode)
+    // console.log("Item clicked with country code: ", countryCode)
 
 
     axios.get(url)
       .then(response => {
         const res = response.data
-        console.log("response: ", res)
+        // console.log("response: ", res)
         setRes(res.holidays)
-        console.log(res)
-        setName(res.holidays[8].name)
-        setDate(res.holidays[8].date)
+        // console.log(res)
       })
       .catch((err) => {
         console.log(err)
-      })
-        
+      }) 
+
     }
 
+
   return (  
-
     <div className="AllHolidays">
-
       { isPending && <div>Loading...</div> }
       { error && <div>{ error }</div> }
       { all && (
-        <div>
-        <h2>All Countries</h2>
-        <br />
-        { all.countries.map((countries, code) => (
+        <div className="allCountriesContainer">
+          <div className="allCountriesList">
+          <h2>All Countries</h2>
+          <br />
+          { all.countries.map((countries, code) => (
           <div key={countries.code}>
             <div style={{fontWeight: "600"}}>{countries.name}</div>
-
-            {/* <p>{countries.code}</p> */}
-            <p value={countryCode}>{countries.code}</p>
+            <button onClick={() => clickHandler(countries.code)}>Show List</button>
             <br />
-            {/* <ToggleComponent /> */}
-            <p></p>
-            <button onClick={() => clickHandler(countries.code)}>Show Holidays for {countries.name}</button>
+            <p>&nbsp;</p>
           </div>
-        ))
-        }
-        <>
-          {console.log(res)}
-          {res &&
-            res.map((holiday) => (
-            <>
-            {holiday.name}
-            <br />
-            {holiday.date}
-            <br />
-            </>
-          ))}
-              
-
-          </>
+          ))
+          }
+          </div>
+          <div className="holidays">
+            {res &&
+              res.map((holiday) => (
+              <div key={holiday.name}>
+                {holiday.name}
+                <br />
+                {holiday.date}
+                <p>&nbsp;</p>
+              </div>
+              ))}
+          </div>
         </div>
-      ) }
-
+      )}
+            <br />
 
 
     </div>

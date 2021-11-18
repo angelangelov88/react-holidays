@@ -23,13 +23,10 @@ const UkHolidays = () => {
           <div key={holidays.uuid}>
             <p style={{fontWeight: "600"}}>{holidays.name}</p>
             <p>{holidays.date}</p>
-            
             <br />
-
           </div>
         ))
         }
-
         </div>
       ) }
     </div>

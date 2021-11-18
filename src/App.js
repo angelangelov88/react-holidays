@@ -12,7 +12,7 @@ import EsHolidays from './EsHolidays';
 import FrHolidays from './FrHolidays';
 import DeHolidays from './DeHolidays';
 import CaHolidays from './CaHolidays';
-
+import Footer from './Footer'
 
 function App() {
   return (
@@ -22,7 +22,6 @@ function App() {
         <Home />
         <div className="content">
           <Switch>
-
             {/* <Route exact path="/">
               <Home />
             </Route> */}
@@ -58,8 +57,10 @@ function App() {
             </Route>
           </Switch>
         </div>
+        <Footer />
 
       </div>
+
     </Router>
 
   );
