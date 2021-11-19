@@ -69,7 +69,9 @@ button:hover a{
   height: calc(100vh - 30rem);
   overflow-y: auto;
   min-width: 350px;
+
 }
+
 
 ::-webkit-scrollbar {
   width: 16px;
@@ -93,3 +95,33 @@ button:hover a{
   height: calc(100vh - 30rem);
   overflow-y: auto;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+.Search {
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+}
+.SearchSpan {
+  width: 15%;
+  border: 1px solid #f1356d;
+  background: #f1356d;
+  padding-top: 4px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px 0 0 5px;
+  font-size: 20px;
+}
+.SearchInput {
+  width: 75%;
+  border: 3px solid #f1356d;
+  border-left: none;
+  padding: 5px;
+  border-radius: 0 5px 5px 0;
+  outline: none;
+}
+

@@ -1,18 +1,34 @@
 import useFetch from "./useFetch";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import SearchBar from "./SearchBar";
+import Card from "./Card";
 
 const AllHolidays = () => {
   let key = `${process.env.REACT_APP_API_KEY}`
 
   let urlAll = `https://holidayapi.com/v1/countries?pretty&key=${key}`
 
+  const [all, setAll] = useState("")
 
-  const { data:all, isPending, error } = useFetch(urlAll)
+  useEffect(() => {
+  axios.get(urlAll)
+  .then(response => {
+    const responseAll = response.data
+    // console.log("response: ", response)
+    setAll(responseAll)
+      // console.log(all)
+  })
+  .catch((err) => {
+    console.log(err)
+  }) 
+  }, [])
 
-  // const fetchAll = axios(`https://holidayapi.com/v1/countries?pretty&key=${key}`)
+  // const { data:all, isPending, error } = useFetch(urlAll)
 
-  // console.log(fetchAll)
+  //   console.log(useFetch(urlAll))
+  //   setAllCountriesData(all)
+  //   console.log(all)
 
   // const [res] = useState()
 
@@ -48,22 +64,40 @@ const AllHolidays = () => {
 
   return (  
     <div className="AllHolidays">
-      { isPending && <div>Loading...</div> }
-      { error && <div>{ error }</div> }
+      {/* { isPending && <div>Loading...</div> }
+      { error && <div>{ error }</div> } */}
       { all && (
+        
         <div className="allCountriesContainer">
           <div className="allCountriesList">
-          <h2>All Countries</h2>
-          <br />
-          { all.countries.map((countries, code) => (
-          <div key={countries.code}>
-            <div style={{fontWeight: "600"}}>{countries.name}</div>
-            <button onClick={() => clickHandler(countries.code)}>Show List</button>
+          <div>
+          {/* {console.log("this" , all)} */}
+                <SearchBar
+                  placeholder="Search"
+                  onChange={(e) => console.log(e.target.value)}
+                />
+
+                <br />
+            </div>
+
+            <h2>All Countries</h2>
             <br />
-            <p>&nbsp;</p>
-          </div>
-          ))
-          }
+            {/* {console.log(all)} */}
+
+
+            { all.countries.map((countries, code) => (
+            <div key={countries.code}>
+              <div style={{fontWeight: "600"}}>{countries.name}</div>
+              <button onClick={() => clickHandler(countries.code)}>Show List</button>
+              <br />
+              <p>&nbsp;</p>
+
+              <Card {...countries} key={countries.code}/>
+              
+            </div>
+
+            ))
+            }
           </div>
           <div className="holidays">
             {res &&
@@ -79,7 +113,7 @@ const AllHolidays = () => {
         </div>
       )}
             <br />
-
+ 
 
     </div>
   );

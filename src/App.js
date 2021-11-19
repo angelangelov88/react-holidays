@@ -13,6 +13,7 @@ import FrHolidays from './FrHolidays';
 import DeHolidays from './DeHolidays';
 import CaHolidays from './CaHolidays';
 import Footer from './Footer'
+import SearchBar from './SearchBar';
 
 function App() {
   return (
