@@ -1,16 +1,10 @@
 import useFetch from "./useFetch";
 
-
 const UkHolidays = () => {
-
+// I used useFetch method to fetch the data from the API and render it 
   let key = `${process.env.REACT_APP_API_KEY}`
 
-
   const { data:uk, isPending, error } = useFetch(`https://holidayapi.com/v1/holidays?pretty&country=GB&year=2020&key=${key}`)
-
-  // console.log(process.env.REACT_APP_API_KEY)
-  // console.log(uk)
-
  
   return (  
     <div className="UkHolidays">

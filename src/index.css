@@ -34,7 +34,7 @@
   padding: 20px;
   height: calc(100vh - 28rem);
   overflow-y: auto;
-
+  min-height: 54vh;
 }
 
 button {
@@ -69,7 +69,7 @@ button:hover a{
   height: calc(100vh - 30rem);
   overflow-y: auto;
   min-width: 350px;
-
+  height: 30rem;
 }
 
 
@@ -92,8 +92,8 @@ button:hover a{
 
 .holidays {
   min-width: 350px;
-  height: calc(100vh - 30rem);
-  overflow-y: auto;
+  /* height: calc(100vh - 28rem); */
+  /* overflow-y: auto; */
 }
 
 button:hover {
