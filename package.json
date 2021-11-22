@@ -1,5 +1,6 @@
 {
   "name": "holidays",
+  "homepage": "https://angel-angelov.netmatters-scs.co.uk/projects/react-holidays/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
