@@ -4,7 +4,7 @@ const UkHolidays = () => {
 // I used useFetch method to fetch the data from the API and render it 
   let key = `${process.env.REACT_APP_API_KEY}`
 
-  const { data:uk, isPending, error } = useFetch(`https://holidayapi.com/v1/holidays?pretty&country=GB&year=2020&key=${key}`)
+  const { data:uk, isPending, error } = useFetch(`https://holidayapi.com/v1/holidays?pretty&country=GB&year=2021&key=${key}`)
  
   return (  
     <div className="UkHolidays">
@@ -12,7 +12,7 @@ const UkHolidays = () => {
       { error && <div>{ error }</div> }
       { uk && (
         <div>
-        <h2>UK Holidays - 2020</h2>
+        <h2>UK Holidays - 2021</h2>
         { uk.holidays.map((holidays, uuid) => (
           <div key={holidays.uuid}>
             <p style={{fontWeight: "600"}}>{holidays.name}</p>

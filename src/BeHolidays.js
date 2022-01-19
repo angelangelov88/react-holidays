@@ -3,7 +3,7 @@ import useFetch from "./useFetch";
 const BeHolidays = () => {
   let key = `${process.env.REACT_APP_API_KEY}`
 
-  const { data:be, isPending, error } = useFetch(`https://holidayapi.com/v1/holidays?pretty&country=BE&year=2020&key=${key}`)
+  const { data:be, isPending, error } = useFetch(`https://holidayapi.com/v1/holidays?pretty&country=BE&year=2021&key=${key}`)
 
   
   // console.log(us)
@@ -14,7 +14,7 @@ const BeHolidays = () => {
       { error && <div>{ error }</div> }
       { be && (
         <div>
-        <h2>Belgium Holidays - 2020</h2>
+        <h2>Belgium Holidays - 2021</h2>
         { be.holidays.map((holidays, uuid) => (
           <div key={holidays.uuid}>
             <p style={{fontWeight: "600"}}>{holidays.name}</p>

@@ -35,7 +35,7 @@ const AllHolidays = () => {
   const [res, setRes] = useState("")
 
   const clickHandler = (countryCode) => {
-  let url = `https://holidayapi.com/v1/holidays?pretty&country=${countryCode}&year=2020&key=${key}`
+  let url = `https://holidayapi.com/v1/holidays?pretty&country=${countryCode}&year=2021&key=${key}`
 
   axios.get(url)
     .then(response => {
