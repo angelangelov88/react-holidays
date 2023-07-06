@@ -17,6 +17,7 @@ const AllHolidays = () => {
   const [all, setAll] = useState("")
   const [data, setData] = useState([])
   const countriesArray = all.countries
+  const [isPending, setIsPending] = useState(true)
 
   //Axios request to fetch the data from the Holidays API
   useEffect(() => {
@@ -25,9 +26,11 @@ const AllHolidays = () => {
       setAll(response.data)
       setData(response.data.countries)
       console.log(data)
+      setIsPending(false)
   })
   .catch((err) => {
     console.log(err)
+    setIsPending(false)
   }) 
   }, [])
 
@@ -77,6 +80,7 @@ const AllHolidays = () => {
 
   return (  
     <div className="AllHolidays">
+      { isPending && <div>Loading...</div> }
       { all && (
       <div className="allCountriesContainer">
         <div className="allCountriesList">
