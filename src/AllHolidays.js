@@ -36,9 +36,10 @@ const AllHolidays = () => {
 
   //Axios request to fetch the holidays per country
   const [res, setRes] = useState("")
+  const year = new Date().getFullYear()-1;
 
   const clickHandler = (countryCode) => {
-  let url = `https://holidayapi.com/v1/holidays?pretty&country=${countryCode}&year=2021&key=${key}`
+  let url = `https://holidayapi.com/v1/holidays?pretty&country=${countryCode}&year=${year}&key=${key}`
 
   axios.get(url)
     .then(response => {
