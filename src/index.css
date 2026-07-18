@@ -7,7 +7,7 @@ html, body, #root {
 
 body {
   margin: 0;
-  overflow: hidden;
+  
 }
 
 * {
@@ -18,16 +18,16 @@ body {
 }
 
 .App {
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  
 }
 
 .content {
   flex: 1 1 auto;
   min-height: 0;
-  overflow-y: auto;
+  
 }
 
 .navbar {
@@ -59,7 +59,7 @@ body {
   padding: 20px;
   flex: 1 1 auto;
   min-height: 0;
-  overflow-y: auto;
+  
 }
 
 button {
@@ -115,18 +115,11 @@ button:hover a{
   }
 
   .country-holiday-group {
-    overflow-y: auto;
-    padding-right: 0.5rem;
-    max-height: calc(100vh - 18rem);
+    height: 98%;
+    overflow: auto;
   }
 
-  @media (max-width: 860px) {
-    .country-holiday-group {
-      max-height: calc(100vh - 20rem);
-    }
-  }
-
-  .country-holiday-group h2 {
+  .country-holiday-group-h2 {
     margin-top: 0;
   }
 
@@ -148,7 +141,7 @@ button:hover a{
 .holidays {
   min-width: 350px;
   /* height: calc(100vh - 28rem); */
-  /* overflow-y: auto; */
+  /*  */
 }
 
 button:hover {

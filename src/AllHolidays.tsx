@@ -36,9 +36,14 @@ const AllHolidays = () => {
   //Axios request to fetch the data from the Holidays API
   useEffect(() => {
   axios.get(urlAll)
-  .then(response => {
-      setAll(response.data)
-      setData(response.data.countries)
+  .then(response => {      
+      const sortedCountries = response.data.countries.sort((a: Country, b: Country) => {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return 0;
+      });
+      setAll(response.data);
+      setData(sortedCountries);
       setIsPending(false)
   })
   .catch((err) => {

@@ -28,7 +28,7 @@ const CountryHolidays = ({ countries = [] }: CountryHolidaysProps) => {
   const { data, isPending, error } = useFetch<HolidayResponse[]>(urls);
 
   return (
-    <div className="CountryHolidays">
+    <>
       {isPending && <div>Loading...</div>}
       {error && <div>{error}</div>}
       {data && Array.isArray(data) && data.map((countryData, index) => {
@@ -39,8 +39,9 @@ const CountryHolidays = ({ countries = [] }: CountryHolidaysProps) => {
         }
 
         return (
+          <>
+            <h2 className='country-holiday-group-h2'>{country.label} Holidays - {year}</h2>
           <div key={country.code} className="country-holiday-group">
-            <h2>{country.label} Holidays - {year}</h2>
             <div className="holiday-list">
               {countryData.holidays.map((holiday) => (
                 <div key={holiday.uuid} className="holiday-item">
@@ -50,9 +51,10 @@ const CountryHolidays = ({ countries = [] }: CountryHolidaysProps) => {
               ))}
             </div>
           </div>
+        </>
         );
       })}
-    </div>
+    </>
   );
 };
 
