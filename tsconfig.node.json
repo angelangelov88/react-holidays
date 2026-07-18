@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "Nodenext",
+    "moduleResolution": "Nodenext",
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": ["vite.config.js"]
+}

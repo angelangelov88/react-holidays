@@ -1,0 +1,105 @@
+/* Styles migrated from inline styles in AllHolidays.tsx */
+.all-holidays {
+  padding: 1rem 0;
+
+  .loading {
+    padding: 1rem;
+    font-weight: 600;
+  }
+
+  .allCountriesContainer {
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    height: calc(100vh - 501px);
+  }
+
+  .allCountriesList {
+    background: #f7f7f7;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    max-height: calc(100vh - 220px);
+    height: 100%;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex: 0 0 360px;
+    min-width: 280px;
+
+    h2 { margin-top: 0; margin-bottom: 0.75rem; }
+    p { margin-top: 0; margin-bottom: 0.75rem; color: #555; }
+
+    .no-country-message { color: #666; margin-top: 0.5rem; }
+
+    .countries-scroll {
+      margin-top: 1rem;
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      padding-right: 0.25rem;
+      
+    }
+
+    .hint { color: #666; }
+
+    .country-button {
+      background: #fff;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      padding: 0.75rem;
+      cursor: pointer;
+      text-align: left;
+
+      &.selected {
+        background: #f1356d;
+        color: #fff;
+        border-color: #f1356d;
+      }
+
+      .name { font-weight: 600; }
+    }
+  }
+
+  .holidays {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    min-height: 320px;
+    overflow: visible;
+    max-height: calc(100vh - 220px);
+    height: 100%;
+    box-sizing: border-box;
+    flex: 1 1 520px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    &-content { display: flex; flex-direction: column; gap: 0.75rem; height: 100%; }
+
+    .holidays-title { margin: 0; }
+
+    .holiday-list { display: flex; flex-direction: column; gap: 0.6rem; flex: 1 1 auto; overflow-y: auto; padding-right: 0.25rem; }
+
+    .holiday-item { padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0; }
+    .holiday-name { font-weight: 600; }
+    .holiday-date { color: #555; }
+
+    .no-selection { color: #666; padding-top: 2rem; }
+  }
+
+  /* Small screens: stack panels */
+  @media (max-width: 860px) {
+    .allCountriesContainer { flex-wrap: wrap; }
+    .allCountriesList { flex: 1 1 100%; min-width: 0; height: auto; }
+    .holidays { flex: 1 1 100%; min-width: 0; height: auto; }
+  }
+}

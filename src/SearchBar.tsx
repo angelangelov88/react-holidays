@@ -1,7 +1,12 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const SearchBar = ({onChange, placeholder}) => {
+interface SearchBarProps {
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder: string;
+}
+
+const SearchBar = ({ onChange, placeholder }: SearchBarProps) => {
 
   return (
     <div className="Search">

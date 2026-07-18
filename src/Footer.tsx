@@ -7,7 +7,6 @@ import {
   FooterLink,
   Heading,
 } from "./FooterStyles";
-import { Link } from 'react-router-dom'
   
 const Footer = () => {
   return (

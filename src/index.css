@@ -1,11 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 /* base styles */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   font-family: "Quicksand";
   color: #333;
 }
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
 .navbar {
   padding: 20px;
   display: flex;
@@ -29,12 +53,13 @@
   color: #f1356d;
 }
 .content {
+  width: 100%;
   max-width: 700px;
-  margin: 40px auto;
+  margin: 0 auto;
   padding: 20px;
-  height: calc(100vh - 28rem);
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
-  min-height: 54vh;
 }
 
 button {
@@ -58,32 +83,62 @@ button:hover a{
   color: white;
 }
 
-.allCountriesContainer {
+.home-tabs {
   display: flex;
-  min-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
-.allCountriesList {
-  height: calc(100vh - 30rem);
-  overflow-y: auto;
-  min-width: 350px;
-  height: 30rem;
-}
+.home .country-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+   padding: 8px;
+   border: none;
+   margin: 5px;
+   border-radius: 10px;
+   text-decoration: none;
+   color: inherit;
+   background: #fff;
+   box-sizing: border-box;
+   min-width: 100px;
+ }
 
+  .home .country-tab:hover,
+  .home .country-tab.active {
+    background-color: #f1356d;
+    color: white;
+    border-color: #f1356d;
+    text-decoration: none;
+  }
 
-::-webkit-scrollbar {
-  width: 16px;
-}
+  .country-holiday-group {
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    max-height: calc(100vh - 18rem);
+  }
 
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(151, 98, 98, 0.3);
-  background-color: rgba(241, 53, 109, 0.8);
-  opacity: 0.5;
-  border-radius: 100px;
-}
+  @media (max-width: 860px) {
+    .country-holiday-group {
+      max-height: calc(100vh - 20rem);
+    }
+  }
 
+  .country-holiday-group h2 {
+    margin-top: 0;
+  }
+
+  .country-holiday-group .holiday-item {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .country-holiday-group .holiday-item p:last-child {
+    margin: 0;
+    color: #555;
+  }
 ::-webkit-scrollbar-thumb {
   background-color: rgb(239, 239, 239);
   box-shadow: inset 0 0 6px rgba(151, 98, 98, 0.3);
