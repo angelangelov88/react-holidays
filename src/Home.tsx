@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { countryRoutes } from './App';
+import { countryRoutes } from './App'; // This now correctly imports the constant
 
 const Home = () => {
 
