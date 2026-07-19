@@ -1,11 +1,12 @@
 import './App.css';
 import Navbar from './Navbar';
-import Home from './Home';
+import CountryTabs from './CountryTabs';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './About';
 import AllHolidays from './AllHolidays';
 import CountryHolidays from './CountryHolidays';
 import Footer from './Footer';
+import HomePage from './HomePage';
 
 export const countryRoutes = [
   { path: '/uk-holidays', countries: [{ code: 'GB', label: 'UK' }] },
@@ -33,9 +34,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar />
-        <Home />
+        <CountryTabs />
         <div className="content">
           <Routes>
+            <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/all-holidays" element={<AllHolidays />} />
             {countryRoutes
