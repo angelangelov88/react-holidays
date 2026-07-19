@@ -7,7 +7,7 @@ import AllHolidays from './AllHolidays';
 import CountryHolidays from './CountryHolidays';
 import Footer from './Footer';
 
-const countryRoutes = [
+export const countryRoutes = [
   { path: '/uk-holidays', countries: [{ code: 'GB', label: 'UK' }] },
   { path: '/us-holidays', countries: [{ code: 'US', label: 'US' }] },
   { path: '/de-holidays', countries: [{ code: 'DE', label: 'Germany' }] },

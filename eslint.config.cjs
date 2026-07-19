@@ -29,6 +29,7 @@ module.exports = [
         Headers: 'readonly',
         Request: 'readonly',
         Response: 'readonly',
+        HTMLInputElement: 'readonly',
       },
     },
     plugins: {
